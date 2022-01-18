@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index # ビューファイルを参照しない
+    post = Post.create(content: params[:content])
+    render json:{ post: post }
   end
 end
